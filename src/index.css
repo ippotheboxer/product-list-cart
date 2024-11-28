@@ -1,3 +1,34 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'RedHatText';
+    src: url("./assets/fonts/RedHatText-VariableFont_wght.ttf");
+}
+
+* {
+    font-family: 'RedHatText';
+    color: #261108;
+}
+
+@layer components {
+    .main {
+        @apply h-screen p-6;
+        background-color: theme(colors.cream-background);
+    }
+    .image {
+        width: 200px;
+        border-radius: 10px;
+    }
+    .categoryName {
+        @apply text-xs;
+        color: #A49695;
+    }
+    .price {
+        color: hsl(14, 86%, 42%)
+    }
+    .cartButton {
+        justify-self: center;
+    }
+}
