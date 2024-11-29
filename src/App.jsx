@@ -1,14 +1,14 @@
 import React from 'react'
 import { Product } from './components/product';
+import { Cart } from './components/Cart';
 import {products} from "./data"
 
 const App = () => {
   return (
-    <main className='main'>
-      <section className="flex justify-start items-start w-full flex-row">
-        
-        <div className="grid grid-cols-3">
-          <h1 className='text-2xl font-bold col-span-3'>Desserts</h1>
+    <main className='main justify-center lg:justify-start p-4'>
+      <section className="flex justify-start content-center lg:content-start flex-col lg:flex-row self-start">
+        <div className="grid lg:grid-cols-3 sm:grid-cols-1 lg:w-7/12 w-full gap-6 pr-8">
+          <h1 className='text-2xl font-bold lg:col-span-3 sm:col-span-1'>Desserts</h1>
           {products.map(product => (
             <Product
           key={product.id}
@@ -19,9 +19,7 @@ const App = () => {
           price={product.price}
           />))}
         </div>
-        <div className="cart">
-          <h2>Your cart</h2>
-        </div>
+        <Cart />
       </section>  
       </main>
   );
