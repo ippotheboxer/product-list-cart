@@ -31,7 +31,6 @@
         color: hsl(14, 86%, 42%);
     }
     .categoryName {
-        @apply text-xs;
         color: #A49695;
     }
     .price {
@@ -40,7 +39,7 @@
     .cartButton {
         @apply flex text-sm font-medium px-4 py-2;
         justify-self: center;
-        border: 1px solid #261108;
+        border: 1px solid hsl(7, 20%, 60%);
         border-radius: 20px;
         position: absolute;
         bottom: 0;
@@ -54,5 +53,19 @@
     .emptyCartText {
         @apply text-xs py-2 font-medium;
         color: #A49695;
+    }
+    .with-line {
+        position: relative;
+      }
+    .with-line::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        border-top: 1px solid hsl(13, 31%, 94%); 
+      }
+    .carbonNeutral {
+        background-color: theme(colors.cream-background);
     }
 }
