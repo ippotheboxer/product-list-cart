@@ -27,7 +27,7 @@ export default function OrderPopUp(props) {
                 <h1 className="text-sm font-semibold pb-1">{item.name}</h1>
                 <div className="flex flex-row justify-start">
                   <p className="text-sm font-bold cartTitle pr-4">{item.quantity}x</p>
-                  <p className="font-light categoryName">@{item.price}</p>
+                  <p className="font-light categoryName">@{(item.price).toFixed(2)}</p>
                  </div>
                 </div>
                 </div>

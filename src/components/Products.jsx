@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
-import { products } from '../data';
 import { CartContext } from '../context/Cart';
+import useDesserts from "../Hooks/useDesserts";
 import Cart from './Cart'
 
 // Icons
@@ -10,13 +10,14 @@ import decrementQuantity from "../assets/images/icon-decrement-quantity.svg";
 
 export default function Products() {
     const {addToCart, removeFromCart, productInCart, speficicQuanitity} = useContext(CartContext);
+    const desserts = useDesserts();
 
     return ( 
         <section className="flex justify-start content-center lg:content-start flex-col lg:flex-row self-start"> 
         <div className="grid lg:grid-cols-3 sm:grid-cols-1 lg:w-7/12 xl:w-6/12 w-full gap-6 pr-8 mr-8">
           <h1 className='text-2xl font-bold lg:col-span-3 sm:col-span-1'>Desserts</h1>
         {
-        products.map(product => (
+        desserts.map(product => (
         <div className='product grid' key={product.id} id={product.id}>
             <div className='relative grid'>
                 <img src={product.image.desktop} 
@@ -41,7 +42,7 @@ export default function Products() {
                 </div>
                 <p className='categoryName pt-2 text-xs'>{product.category}</p>
                 <p className='font-medium'>{product.name}</p>
-                <p className='price'>${product.price}</p>
+                <p className='price'>${(product.price).toFixed(2)}</p>
                 </div>
                 ))}
                 </div>
