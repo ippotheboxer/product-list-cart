@@ -9,7 +9,7 @@ import incrementQuantity from "../assets/images/icon-increment-quantity.svg";
 import decrementQuantity from "../assets/images/icon-decrement-quantity.svg";
 
 export default function Products() {
-    const { cartItems, addToCart, removeFromCart, productInCart, speficicQuanitity} = useContext(CartContext);
+    const {addToCart, removeFromCart, productInCart, speficicQuanitity} = useContext(CartContext);
 
     return ( 
         <section className="flex justify-start content-center lg:content-start flex-col lg:flex-row self-start"> 
@@ -19,19 +19,20 @@ export default function Products() {
         products.map(product => (
         <div className='product grid' key={product.id} id={product.id}>
             <div className='relative grid'>
-                <img src={product.image.desktop} className='image' />
+                <img src={product.image.desktop} 
+                className={productInCart(product) ? "image redBorder" : "image"} />
                 {
                 productInCart(product) ? (
                     <div className='incrementProduct'>
                         <div className='flex flex-row justify-between'>
-                        <button onClick={() => removeFromCart(product)} className='pr-10'>
-                        <img src={decrementQuantity} className='rounded-full border py-2 px-1'/>
-                        </button>
-                        <p className='text-white'>{speficicQuanitity(product)}</p>
-                        <button onClick={() => addToCart(product)} className='pl-10'>
-                            <img src={incrementQuantity} className='rounded-full border p-1'/>
-                        </button>
-                    </div>
+                            <button onClick={() => removeFromCart(product)} className='mr-9'>
+                                <img src={decrementQuantity} className='rounded-full border py-2 px-1'/>
+                            </button>
+                            <p className='text-white'>{speficicQuanitity(product)}</p>
+                            <button onClick={() => addToCart(product)} className='ml-9'>
+                                <img src={incrementQuantity} className='rounded-full border p-1'/>
+                            </button>
+                        </div>
                     </div>
                 ) : (
                     <button onClick={() => addToCart(product)} className='cartButton'><img src={addToCartIcon}/> Add to cart</button>

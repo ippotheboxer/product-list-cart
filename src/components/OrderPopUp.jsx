@@ -20,7 +20,7 @@ export default function OrderPopUp(props) {
 
         <div className='bg-cream-background rounded-xl'>
         {props.items.map((item) => (
-          <div className="flex justify-between items-center with-line pb-3 p-4" key={item.id}>
+          <div className="flex justify-between items-center with-line p-5" key={item.id}>
             <div className='flex'>
               <img src={item.image.thumbnail} className='rounded-lg w-14 mr-4' />
               <div className='flex flex-col'> 
@@ -31,7 +31,7 @@ export default function OrderPopUp(props) {
                  </div>
                 </div>
                 </div>
-                <p className='font-semibold self-end'>${item.price * item.quantity}</p>
+                <p className='font-semibold self-end'>${(item.price * item.quantity).toFixed(2)}</p>
           </div>
          ))}
          <div className="flex flex-row justify-between items-center w-full pb-4 p-4">

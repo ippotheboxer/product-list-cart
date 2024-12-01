@@ -27,6 +27,9 @@
         border-radius: 10px;
         margin-bottom: 20px;
     }
+    .redBorder {
+        border: 2px solid hsl(14, 86%, 42%);
+    }
     .cartTitle {
         color: hsl(14, 86%, 42%);
     }

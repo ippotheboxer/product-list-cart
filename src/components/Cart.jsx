@@ -5,7 +5,7 @@ import { CartContext } from '../context/Cart';
 import OrderPopUp from "./OrderPopUp";
 
 export default function Cart() {
-  const { cartItems, addToCart, removeFromCart, clearCart, getCartTotal } = useContext(CartContext);
+  const { cartItems, getCartTotal } = useContext(CartContext);
     return (
         <div className="cart">
           <h2 className='cartTitle text-2xl font-bold self-start pb-4'>Your cart ({cartItems.length})</h2>
@@ -16,8 +16,8 @@ export default function Cart() {
             <h1 className="text-md font-semibold pb-1">{item.name}</h1>
             <div className="flex flex-row justify-start">
               <p className="text-sm font-bold cartTitle pr-4">{item.quantity}x</p>
-              <p className="font-light categoryName text-sm pr-4">@{item.price}</p>
-              <p className="text-sm">${item.price * item.quantity}</p>
+              <p className="font-light categoryName text-sm pr-4">@{(Number(item.price)).toFixed(2)}</p>
+              <p className="text-sm">${(item.price * item.quantity).toFixed(2)}</p>
             </div>
         </div>
       </div>
@@ -28,13 +28,13 @@ export default function Cart() {
             <div className="flex flex-col justify-between items-center self-start w-full">
               <div className="flex flex-row justify-between items-center w-full pb-4 p-2">
             <h1 className="text-sm">Order Total</h1>
-            <h2 className="text-xl font-bold">${getCartTotal()}</h2>
+            <h2 className="text-xl font-bold">${(getCartTotal()).toFixed(2)}</h2>
             </div>
             <div className="flex flex-row carbonNeutral py-3 px-6 rounded-md mb-4">
               <img src={iconCarbonNeutral} />
               <p className="text-sm">This is a <span className="font-semibold">carbon-neutral</span> delivery </p>
             </div>
-            <OrderPopUp items={cartItems} orderTotal={getCartTotal()}/>
+            <OrderPopUp items={cartItems} orderTotal={(getCartTotal()).toFixed(2)}/>
           </div>
           ) : ( 
             <div className="flex justify-center items-center flex-col mx-4">
