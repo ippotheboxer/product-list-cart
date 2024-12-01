@@ -68,4 +68,9 @@
     .carbonNeutral {
         background-color: theme(colors.cream-background);
     }
+    .orderButton {
+        @apply py-2 px-4 rounded-3xl w-full text-sm;
+        background-color: hsl(14, 86%, 42%);
+        color: #fff;
+    }
 }

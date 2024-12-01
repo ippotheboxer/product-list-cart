@@ -3,7 +3,7 @@ import Products from './components/Products';
 
 const App = () => {
   return (
-    <main className='main justify-center lg:justify-start p-4'>
+    <main className='main justify-center lg:justify-start p-6'>
       <Products />
       </main>
   );

@@ -2,6 +2,7 @@ import emptyCartIcon from "../assets/images/illustration-empty-cart.svg";
 import iconCarbonNeutral from "../assets/images/icon-carbon-neutral.svg";
 import { useContext } from 'react';
 import { CartContext } from '../context/Cart';
+import OrderPopUp from "./OrderPopUp";
 
 export default function Cart() {
   const { cartItems, addToCart, removeFromCart, clearCart, getCartTotal } = useContext(CartContext);
@@ -11,15 +12,13 @@ export default function Cart() {
           <div className="flex flex-col gap-4 w-full">
     {cartItems.map((item) => (
       <div className="flex justify-between items-center cartItem with-line pb-3" key={item.id}>
-        <div className="flex gap-4">
           <div className="flex flex-col">
-            <h1 className="text-sm font-semibold pb-1">{item.name}</h1>
-            <div className="flex flex-row justify-between">
-              <p className="text-sm font-bold cartTitle">{item.quantity}x</p>
-              <p className="font-light categoryName">@{item.price}</p>
-              <p>${item.price * item.quantity}</p>
+            <h1 className="text-md font-semibold pb-1">{item.name}</h1>
+            <div className="flex flex-row justify-start">
+              <p className="text-sm font-bold cartTitle pr-4">{item.quantity}x</p>
+              <p className="font-light categoryName text-sm pr-4">@{item.price}</p>
+              <p className="text-sm">${item.price * item.quantity}</p>
             </div>
-          </div>
         </div>
         <div className="flex gap-4">
           <button
@@ -49,18 +48,11 @@ export default function Cart() {
             <h1 className="text-sm">Order Total</h1>
             <h2 className="text-xl font-bold">${getCartTotal()}</h2>
             </div>
-            <div className="flex flex-row carbonNeutral py-3 px-6 rounded-md">
+            <div className="flex flex-row carbonNeutral py-3 px-6 rounded-md mb-4">
               <img src={iconCarbonNeutral} />
               <p className="text-sm">This is a <span className="font-semibold">carbon-neutral</span> delivery </p>
             </div>
-            <button
-              className="px-4 py-2"
-              onClick={() => {
-                clearCart()
-              }}
-            >
-              Clear cart
-            </button>
+            <OrderPopUp items={cartItems} orderTotal={getCartTotal()}/>
           </div>
           ) : ( 
             <>
