@@ -20,24 +20,6 @@ export default function Cart() {
               <p className="text-sm">${item.price * item.quantity}</p>
             </div>
         </div>
-        <div className="flex gap-4">
-          <button
-            className="px-4 py-2"
-            onClick={() => {
-              addToCart(item)
-            }}
-          >
-            +
-          </button>
-          <button
-            className="px-4 py-2"
-            onClick={() => {
-              removeFromCart(item)
-            }}
-          >
-            -
-          </button>
-        </div>
       </div>
     ))}
   </div>
@@ -55,10 +37,10 @@ export default function Cart() {
             <OrderPopUp items={cartItems} orderTotal={getCartTotal()}/>
           </div>
           ) : ( 
-            <>
-            <img src={emptyCartIcon} alt="" className="w-20"/>
+            <div className="flex justify-center items-center flex-col mx-4">
+            <img src={emptyCartIcon} alt="" className="w-28 p-1"/>
           <p className="emptyCartText">Your added items will display here</p>
-          </>
+          </div>
           )
           }
         </div>

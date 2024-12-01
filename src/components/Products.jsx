@@ -1,11 +1,15 @@
 import { useContext, useEffect, useState } from 'react';
 import { products } from '../data';
 import { CartContext } from '../context/Cart';
-import addToCartIcon from "../assets/images/icon-add-to-cart.svg";
 import Cart from './Cart'
 
+// Icons
+import addToCartIcon from "../assets/images/icon-add-to-cart.svg";
+import incrementQuantity from "../assets/images/icon-increment-quantity.svg";
+import decrementQuantity from "../assets/images/icon-decrement-quantity.svg";
+
 export default function Products() {
-    const { cartItems, addToCart } = useContext(CartContext);
+    const { cartItems, addToCart, removeFromCart, productInCart, speficicQuanitity} = useContext(CartContext);
 
     return ( 
         <section className="flex justify-start content-center lg:content-start flex-col lg:flex-row self-start"> 
@@ -16,7 +20,23 @@ export default function Products() {
         <div className='product grid' key={product.id} id={product.id}>
             <div className='relative grid'>
                 <img src={product.image.desktop} className='image' />
-                <button onClick={() => addToCart(product)} className='cartButton'><img src={addToCartIcon}/> Add to cart</button>
+                {
+                productInCart(product) ? (
+                    <div className='incrementProduct'>
+                        <div className='flex flex-row justify-between'>
+                        <button onClick={() => removeFromCart(product)} className='pr-10'>
+                        <img src={decrementQuantity} className='rounded-full border py-2 px-1'/>
+                        </button>
+                        <p className='text-white'>{speficicQuanitity(product)}</p>
+                        <button onClick={() => addToCart(product)} className='pl-10'>
+                            <img src={incrementQuantity} className='rounded-full border p-1'/>
+                        </button>
+                    </div>
+                    </div>
+                ) : (
+                    <button onClick={() => addToCart(product)} className='cartButton'><img src={addToCartIcon}/> Add to cart</button>
+                )
+                }
                 </div>
                 <p className='categoryName pt-2 text-xs'>{product.category}</p>
                 <p className='font-medium'>{product.name}</p>

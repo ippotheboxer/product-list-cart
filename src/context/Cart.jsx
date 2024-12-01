@@ -6,6 +6,20 @@ export const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
 
+  const productInCart = (item) => {
+    const isItemInCart = cartItems.find((cartItem) => cartItem.id === item.id);
+    if (isItemInCart) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  const speficicQuanitity = (item) => {
+    const isItemInCart = cartItems.find((cartItem) => cartItem.id === item.id);
+    return isItemInCart.quantity;
+  }
+
   const addToCart = (item) => {
     const isItemInCart = cartItems.find((cartItem) => cartItem.id === item.id);
 
@@ -64,6 +78,8 @@ export const CartProvider = ({ children }) => {
         removeFromCart,
         clearCart,
         getCartTotal,
+        productInCart,
+        speficicQuanitity
       }}
     >
       {children}

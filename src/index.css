@@ -45,14 +45,28 @@
         bottom: 0;
         background-color: #fff;
     }
+    .incrementProduct {
+        @apply flex text-sm font-medium px-2 py-2;
+        justify-self: center;
+        border: 1px solid hsl(14, 86%, 42%);
+        border-radius: 20px;
+        position: absolute;
+        bottom: 0;
+        background-color: hsl(14, 86%, 42%);
+        color: white;
+    }
     .cart {
         @apply flex flex-col justify-start items-center bg-white py-4 px-10;
         height: fit-content;
         border-radius: 1rem;
     }
-    .emptyCartText {
+    .greyText {
         @apply text-xs py-2 font-medium;
         color: #A49695;
+    }
+    .emptyCartText {
+        @apply text-xs py-2 font-medium;
+        color: hsl(7, 20%, 60%);
     }
     .with-line {
         position: relative;
