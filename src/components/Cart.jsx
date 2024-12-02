@@ -1,3 +1,4 @@
+import React from 'react';
 import emptyCartIcon from "../assets/images/illustration-empty-cart.svg";
 import iconCarbonNeutral from "../assets/images/icon-carbon-neutral.svg";
 import { useContext } from 'react';

@@ -1,3 +1,4 @@
+import React from 'react';
 import { useContext, useEffect, useState } from 'react';
 import { CartContext } from '../context/Cart';
 import useDesserts from "../Hooks/useDesserts";
