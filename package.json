@@ -2,6 +2,7 @@
   "name": "my-project",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://ippotheboxer.github.io/product-list-cart/",
   "type": "module",
   "scripts": {
     "dev": "vite",
