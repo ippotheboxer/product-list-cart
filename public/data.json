@@ -2,6 +2,7 @@
     {
         "id": 1,
        "image": {
+            "default": "./assets/images/image-waffle",
             "thumbnail": "./assets/images/image-waffle-thumbnail.jpg",
             "mobile": "./assets/images/image-waffle-mobile.jpg",
             "tablet": "./assets/images/image-waffle-tablet.jpg",
@@ -14,6 +15,7 @@
     {
         "id": 2,
         "image": {
+            "default": "./assets/images/image-creme-brulee",
             "thumbnail": "./assets/images/image-creme-brulee-thumbnail.jpg",
             "mobile": "./assets/images/image-creme-brulee-mobile.jpg",
             "tablet": "./assets/images/image-creme-brulee-tablet.jpg",
@@ -26,6 +28,7 @@
      {
         "id": 3,
         "image": {
+            "default": "./assets/images/image-macaron",
             "thumbnail": "./assets/images/image-macaron-thumbnail.jpg",
             "mobile": "./assets/images/image-macaron-mobile.jpg",
             "tablet": "./assets/images/image-macaron-tablet.jpg",
@@ -38,6 +41,7 @@
      {
         "id": 4,
         "image": {
+            "default": "./assets/images/image-tiramisu",
             "thumbnail": "./assets/images/image-tiramisu-thumbnail.jpg",
             "mobile": "./assets/images/image-tiramisu-mobile.jpg",
             "tablet": "./assets/images/image-tiramisu-tablet.jpg",
@@ -50,6 +54,7 @@
      {
         "id": 5,
         "image": {
+            "default": "./assets/images/image-baklava",
             "thumbnail": "./assets/images/image-baklava-thumbnail.jpg",
             "mobile": "./assets/images/image-baklava-mobile.jpg",
             "tablet": "./assets/images/image-baklava-tablet.jpg",
@@ -62,6 +67,7 @@
      {
         "id": 6,
         "image": {
+            "default": "./assets/images/image-meringue",
             "thumbnail": "./assets/images/image-meringue-thumbnail.jpg",
             "mobile": "./assets/images/image-meringue-mobile.jpg",
             "tablet": "./assets/images/image-meringue-tablet.jpg",
@@ -74,6 +80,7 @@
      {
         "id": 7,
         "image": {
+            "default": "./assets/images/image-cake",
             "thumbnail": "./assets/images/image-cake-thumbnail.jpg",
             "mobile": "./assets/images/image-cake-mobile.jpg",
             "tablet": "./assets/images/image-cake-tablet.jpg",
@@ -86,6 +93,7 @@
      {
         "id": 8,
         "image": {
+            "default": "./assets/images/image-brownie",
             "thumbnail": "./assets/images/image-brownie-thumbnail.jpg",
             "mobile": "./assets/images/image-brownie-mobile.jpg",
             "tablet": "./assets/images/image-brownie-tablet.jpg",
@@ -98,6 +106,7 @@
      {
         "id": 9,
         "image": {
+            "default": "./assets/images/image-panna-cotta",
             "thumbnail": "./assets/images/image-panna-cotta-thumbnail.jpg",
             "mobile": "./assets/images/image-panna-cotta-mobile.jpg",
             "tablet": "./assets/images/image-panna-cotta-tablet.jpg",

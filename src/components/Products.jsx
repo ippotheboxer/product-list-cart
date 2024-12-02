@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import { CartContext } from '../context/Cart';
 import useDesserts from "../Hooks/useDesserts";
 import Cart from './Cart'
-
+import ResponsiveImage from './ResponsiveImage';
 // Icons
 import addToCartIcon from "../assets/images/icon-add-to-cart.svg";
 import incrementQuantity from "../assets/images/icon-increment-quantity.svg";
@@ -12,6 +12,8 @@ export default function Products() {
     const {addToCart, removeFromCart, productInCart, speficicQuanitity} = useContext(CartContext);
     const desserts = useDesserts();
 
+
+
     return ( 
         <section className="flex justify-start content-center lg:content-start flex-col lg:flex-row self-start"> 
         <div className="grid lg:grid-cols-3 sm:grid-cols-1 lg:w-7/12 xl:w-6/12 w-full gap-6 pr-8 mr-8">
@@ -20,8 +22,7 @@ export default function Products() {
         desserts.map(product => (
         <div className='product grid' key={product.id} id={product.id}>
             <div className='relative grid'>
-                <img src={product.image.desktop} 
-                className={productInCart(product) ? "image redBorder" : "image"} />
+                <ResponsiveImage imgFileName={product.image.default} activeImg={productInCart(product)} />
                 {
                 productInCart(product) ? (
                     <div className='incrementProduct'>
