@@ -14,24 +14,24 @@ export default function OrderPopUp(props) {
   {
     close => (
     <div className='modal p-4 rounded-3xl'>
-        <img src={iconOrderConfirmed} className='pb-2'/>
-        <h1 className='font-bold text-3xl pb-1'>Order Confirmed</h1>
+        <img src={iconOrderConfirmed} className='pb-2 md:w-10 w-8'/>
+        <h1 className='font-bold md:text-3xl text-lg pb-1'>Order Confirmed</h1>
         <p className='text-xs categoryName pb-4'>We hope you enjoy your food!</p>
 
         <div className='bg-cream-background rounded-xl'>
         {props.items.map((item) => (
-          <div className="flex justify-between items-center with-line p-5" key={item.id}>
-            <div className='flex'>
-              <img src={item.image.thumbnail} className='rounded-lg w-14 mr-4' />
+          <div className="flex justify-between items-center with-line md:p-5 p-2" key={item.id}>
+            <div className='flex flex-col md:flex-row'>
+              <img src={item.image.thumbnail} className='rounded-lg md:w-14 w-10 md:mr-4 mr-1' />
               <div className='flex flex-col'> 
-                <h1 className="text-sm font-semibold pb-1">{item.name}</h1>
+                <h1 className="md:text-sm text-xs font-semibold pb-1">{item.name}</h1>
                 <div className="flex flex-row justify-start">
-                  <p className="text-sm font-bold cartTitle pr-4">{item.quantity}x</p>
-                  <p className="font-light categoryName">@{(item.price).toFixed(2)}</p>
+                  <p className="md:text-sm text-xs font-bold cartTitle pr-4">{item.quantity}x</p>
+                  <p className="md:text-sm text-xs font-light categoryName">@{(item.price).toFixed(2)}</p>
                  </div>
                 </div>
                 </div>
-                <p className='font-semibold self-end'>${(item.price * item.quantity).toFixed(2)}</p>
+                <p className='font-semibold self-end md:text-sm text-xs'>${(item.price * item.quantity).toFixed(2)}</p>
           </div>
          ))}
          <div className="flex flex-row justify-between items-center w-full pb-4 p-4">
